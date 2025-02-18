@@ -157,7 +157,7 @@ The temporary table `T1` should be similar to what we have below.
 
 ### Step 2b: Create a Temporary Table `T2` to Filter the User with Top Amount of Rated Movies
 
-Please note that I used `ORDER BY` and `LIMIT 1` to ensure that, while the count is tied, only the user name with the lexicographically smallest first letter is represented.
+Please note that I used `ORDER BY` and `LIMIT 1` to ensure that, in case of a tie in the count of rated movies, only the user name with the lexicographically smallest first letter is selected.
 
 ```sql
     ), 
@@ -178,7 +178,7 @@ The temporary table `T2` should be similar to what we have below.
 
 ### Step 2c: Create a Temporary Table `T3` to Calculate the Average Rating of Each Movie
 
-Please note that I used `ORDER BY` and `LIMIT 1` to ensure that, while the rating is tied, only the movie name with the lexicographically smallest first letter is represented.
+Please note that I used `ORDER BY` and `LIMIT 1` to ensure that, while the average rating is tied, only the movie name with the lexicographically smallest first letter is selected.
 
 ```sql
     T3 AS (
@@ -202,10 +202,12 @@ The temporary table `T3` should be similar to what we have below.
 
 
 
-### Step 3: 
+### Step 3: Merge Two Results into One Table
 
 
-[`UNION ALL`](https://www.geeksforgeeks.org/sql-union-all/)
+Finally, I can use [`UNION ALL`](https://www.geeksforgeeks.org/sql-union-all/) to merge the results into one table within the same column `results`.
+
+In this case, no matter whether I use `UNION ALL` or `UNION`, the result will be the same since `T2` and `T3` both have only one result.
 
 
 ```sql
@@ -270,7 +272,7 @@ FROM T3;
 
 *Note: This section is updated on 02/18/2025.*
 
-Upon review, I realized that the temp tables can be performed in a single statement without a `WITH` clause, making the query more concise.
+Upon review, I realized that the temp tables can be replaced with inline subqueries, removing the need for a `WITH` clause. This makes the query more concise and avoids the creation of temporary tables.
 
 
 ```sql
