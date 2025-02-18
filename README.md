@@ -127,7 +127,7 @@ To create the result table with xxxxx, I need to find out the following info:
 * xxxx (see temp table `T1`)
 * xxxx (see temp table `T2`)
 * xxxx (see temp table `T3`)
-* xxxx (see step xxx)
+* xxxx (see step 3)
 
 
 ### Step 2a: Create a Temporary Table `T1` 
@@ -135,7 +135,16 @@ To create the result table with xxxxx, I need to find out the following info:
 
 
 ```sql
-
+WITH 
+    T AS (
+        SELECT 
+            mr.user_id, 
+            u.name, 
+            COUNT(mr.movie_id) AS movie_count
+        FROM MovieRating mr
+        LEFT JOIN Users u ON mr.user_id=u.user_id  
+        GROUP BY user_id
+    ), 
 ```
 
 The temporary table `T2` should be similar to what we have below. 
@@ -153,7 +162,13 @@ The temporary table `T2` should be similar to what we have below.
 
 
 ```sql
-
+    ), 
+    T2 AS (
+        SELECT * 
+        FROM T 
+        WHERE movie_count = (SELECT MAX(movie_count) FROM T) 
+        ORDER BY name LIMIT 1
+    ), 
 ```
 
 The temporary table `T2` should be similar to what we have below. 
@@ -168,7 +183,17 @@ The temporary table `T2` should be similar to what we have below.
 
 
 ```sql
-
+    T3 AS (
+        SELECT 
+            mr.movie_id,
+            m.title,
+            AVG(mr.rating) AS avg_rate
+        FROM MovieRating mr 
+        LEFT JOIN Movies m ON mr.movie_id=m.movie_id
+        WHERE mr.created_at BETWEEN '2020-02-01' AND '2020-02-29'
+        GROUP BY mr.movie_id
+        ORDER BY avg_rate DESC, title ASC LIMIT 1
+    )
 ```
 
 The temporary table `T3` should be similar to what we have below. 
@@ -182,19 +207,17 @@ The temporary table `T3` should be similar to what we have below.
 ### Step 3: 
 
 
-
-```sql
-
-```
-
-
-### Step 4: 
-
 [`UNION ALL`](https://www.geeksforgeeks.org/sql-union-all/)
 
-```sql
 
+```sql
+SELECT name AS results
+FROM T2
+UNION ALL 
+SELECT title AS results 
+FROM T3;
 ```
+
 
 
 #### Final Syntax and Output using MySQL
