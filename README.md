@@ -207,7 +207,7 @@ The temporary table `T3` should be similar to what we have below.
 
 Finally, I can use [`UNION ALL`](https://www.geeksforgeeks.org/sql-union-all/) to merge the results into one table within the same column `results`.
 
-In this case, no matter whether I use `UNION ALL` or `UNION`, the result will be the same since `T2` and `T3` both have only one result.
+In this case, no matter whether I use `UNION ALL` or `UNION`, the result will be the same since `T2` and `T3` both return only one result.
 
 
 ```sql
