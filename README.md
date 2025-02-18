@@ -128,7 +128,7 @@ To create the result table with the most active user and top-rated movie during 
 * Movie ID with the average rating during Feb 2020 (see temp table `T3`)
 
 
-### Step 2a: Create a Temporary Table `T1` 
+### Step 2a: Create a Temporary Table `T1` to Count Rated Movies for Each User
 
 
 
@@ -145,7 +145,7 @@ WITH
     ), 
 ```
 
-The temporary table `T2` should be similar to what we have below. 
+The temporary table `T1` should be similar to what we have below. 
 
 | user_id | name   | movie_count |
 | ------- | ------ | ----------- |
@@ -155,9 +155,9 @@ The temporary table `T2` should be similar to what we have below.
 | 4       | James  | 1           |
 
 
-### Step 2b: Create a Temporary Table `T2` 
+### Step 2b: Create a Temporary Table `T2` to Filter the User with Top Amount of Rated Movies
 
-
+Please note that I used `ORDER BY` and `LIMIT 1` to ensure that, while the count is tied, only the user name with the lexicographically smallest first letter is represented.
 
 ```sql
     ), 
@@ -176,9 +176,9 @@ The temporary table `T2` should be similar to what we have below.
 | 1       | Daniel | 3           |
 
 
-### Step 2c: Create a Temporary Table `T3` 
+### Step 2c: Create a Temporary Table `T3` to Calculate the Average Rating of Each Movie
 
-
+Please note that I used `ORDER BY` and `LIMIT 1` to ensure that, while the rating is tied, only the movie name with the lexicographically smallest first letter is represented.
 
 ```sql
     T3 AS (
