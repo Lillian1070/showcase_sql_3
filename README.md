@@ -26,7 +26,7 @@ WITH
             AVG(mr.rating) AS avg_rate
         FROM MovieRating mr 
         LEFT JOIN Movies m ON mr.movie_id=m.movie_id
-        WHERE mr.created_at >= '2020-02-01' AND mr.created_at <= '2020-02-28'
+        WHERE mr.created_at BETWEEN '2020-02-01' AND '2020-02-29'
         GROUP BY mr.movie_id
         ORDER BY avg_rate DESC, title ASC LIMIT 1
     )
