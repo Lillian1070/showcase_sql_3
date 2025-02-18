@@ -11,38 +11,40 @@ This SQL practice problem is based on **[LeetCode SQL 50 - 1341. Movie Rating](h
 
 ## Practice
 
-+---------------+---------+
+Table: `Movies`
+
 | Column Name   | Type    |
-+---------------+---------+
+|---------------|---------|
 | movie_id      | int     |
 | title         | varchar |
-+---------------+---------+
+
+
 - `movie_id` is the primary key (column with unique values) for this table.
 - `title` is the name of the movie.
  
 
-Table: Users
+Table: `Users`
 
-+---------------+---------+
 | Column Name   | Type    |
-+---------------+---------+
+|---------------|---------|
 | user_id       | int     |
 | name          | varchar |
-+---------------+---------+
+
+
 - `user_id` is the primary key (column with unique values) for this table.
 - The column `name` has unique values.
 
 
-Table: MovieRating
+Table: `MovieRating`
 
-+---------------+---------+
 | Column Name   | Type    |
-+---------------+---------+
+|---------------|---------|
 | movie_id      | int     |
 | user_id       | int     |
 | rating        | int     |
 | created_at    | date    |
-+---------------+---------+
+
+
 - (`movie_id`, `user_id`) is the primary key (column with unique values) for this table.
 - This table contains the rating of a movie by a user in their review.
 - `created_at` is the user's review date. 
