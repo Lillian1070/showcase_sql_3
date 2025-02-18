@@ -122,12 +122,10 @@ The result format is in the following example.
 
 ### Step 1: Identify the Fields Required
 
-To create the result table with xxxxx, I need to find out the following info: 
+To create the result table with the most active user and top-rated movie during February 2020, I need to find out the following info: 
 
-* xxxx (see temp table `T1`)
-* xxxx (see temp table `T2`)
-* xxxx (see temp table `T3`)
-* xxxx (see step 3)
+* User ID with the count of rated movies (see temp table `T1`)
+* Movie ID with the average rating during Feb 2020 (see temp table `T3`)
 
 
 ### Step 2a: Create a Temporary Table `T1` 
