@@ -4,12 +4,12 @@ This SQL practice problem is based on **[LeetCode SQL 50 - 1341. Movie Rating](h
 - **Objective:** Calculate the most active user and top-rated movie during February 2020.  
 - **Practice Purpose:** Self-learning and reinforcement of SQL joins, aggregation, and window functions.
 - **Outline:**
-  - Practice (practice problem and query output)
-  - Solution (step-by-step explanation)
-  - Query Optimization (refinement for efficiency and readability)
+  - [**Practice**](#section-1) (practice problem and query output)
+  - [**Solution**](#section-2) (step-by-step explanation)
+  - [**Query Optimization**](#section-3) (refinement for efficiency and readability)
 
 
-## Practice
+## <a name="section-1"></a>🧪 Practice
 
 Table: `Movies`
 
@@ -116,7 +116,7 @@ The result format is in the following example.
 
 
 
-## Solution
+## <a name="section-2"></a>🧠 Solution
 
 *This section outlines my thought process for solving the problem.*
 
@@ -268,7 +268,7 @@ FROM T3;
 | Frozen 2 |
 
 
-## Query Optimization using MySQL
+## <a name="section-3"></a>🛠️ Query Optimization using MySQL
 
 *Note: This section is updated on 02/18/2025.*
 
