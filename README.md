@@ -1,6 +1,8 @@
 # [SQL] Most Active User & Top Rated Movie in a Specific Period
 
-This SQL practice problem is based on **[LeetCode SQL 50 - 1341. Movie Rating](https://leetcode.com/problems/movie-rating/description/?envType=study-plan-v2&envId=top-sql-50)** 
+_This SQL practice problem is based on **[LeetCode SQL 50 - 1341. Movie Rating](https://leetcode.com/problems/movie-rating/description/?envType=study-plan-v2&envId=top-sql-50)**, used here for personal learning and educational purposes._ 
+
+
 - **Objective:** Calculate the most active user and top-rated movie during February 2020.  
 - **Practice Purpose:** Self-learning and reinforcement of SQL joins, aggregation, and window functions.
 - **Outline:**
