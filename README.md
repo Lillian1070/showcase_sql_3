@@ -1,4 +1,4 @@
-# [SQL] Most Active User & Top Rated Movie in a Specific Period
+# [SQL] Identifying Most Active User & Top Rated Movie in a Specific Period
 
 _This SQL practice problem is based on **[LeetCode SQL 50 - 1341. Movie Rating](https://leetcode.com/problems/movie-rating/description/?envType=study-plan-v2&envId=top-sql-50)**, used here for personal learning and educational purposes._ 
 
